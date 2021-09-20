@@ -28,7 +28,7 @@ $(document).ready(function(){
 		}
 	}); 
     try {
-        fetch("/courses",{method:"get",mode:"cors"}).then(function(response) {
+        fetch("/courses.json",{method:"get",mode:"cors"}).then(function(response) {
             return response.json();
         }).catch(function(err){
             throw err;
