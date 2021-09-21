@@ -28,13 +28,8 @@ $(document).ready(function(){
 		}
 	}); 
     try {
-        fetch("/courses.json",{method:"get",mode:"cors"}).then(function(response) {
-            return response.json();
-        }).catch(function(err){
-            throw err;
-        }).then(function(json){
+        (async () => COURSE)().then(function(json){
             json.courses.forEach(element => {
-                console.log(element)
                 $("#lesson_lists").append(
                     `<div class="lesson-card text-left">
                         <i class="${element.iconCLASS} ${element.colorCLASS}"></i>
@@ -57,7 +52,7 @@ $(document).ready(function(){
                         </div>
                         <div class="modal-body">
                         <!-- 視窗內容 -->
-                        <img src="${element.img}" alt="${element.title}" class="modal-img">
+                        ${element.img ? `<img src="assets/image/${element.img}" alt="${element.title}" class="modal-img">` : ""}
                         <p class="text-dark pt-3">${element.description}</p>
                         </div>
                         <div class="modal-footer">

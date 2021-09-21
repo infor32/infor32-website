@@ -1,4 +1,6 @@
-
+*::-webkit-scrollbar {
+    display: none;
+}
 
 * {
     font-family: 'Microsoft JhengHei', sans-serif;
@@ -170,7 +172,13 @@ a:hover {
     position: relative;
     padding: 15px;
     width: 100%;
-} 
+}
+
+.detail-text-container>p {
+    line-break: anywhere;
+    text-align: left;
+}
+
 /* ===================================
 =                 社徽               =
 ====================================== */
